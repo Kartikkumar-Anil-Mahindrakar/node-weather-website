@@ -7,8 +7,8 @@ const forecast = (lat,lon,callback)=>{
         }else if(body.error){
             callback('unable to find the location.')
         }else{
-            // console.log(response.body)
-            callback(undefined,body.weather[0].description+".It is currently "+body.main.temp+' degrees out.')
+            // console.log(body)
+            callback(undefined,body.weather[0].description+".It is currently "+body.main.temp+' degrees out.' + '\nTodays max-temp is '+body.main.temp_max +  ' degrees,  Todays min-temp is '+body.main.temp_min+' degrees.')
         }
     })
 }
